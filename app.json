@@ -1,0 +1,31 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/user/user"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "xx新闻",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#282828",
+    "selectedColor": "#177bd6",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "新闻",
+        "iconPath": "images/news.png",
+        "selectedIconPath": "images/newsHighLight.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "images/my.png",
+        "selectedIconPath": "images/myHignLight.png"
+      }
+    ]
+  }
+}

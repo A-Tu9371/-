@@ -1,0 +1,16 @@
+/**index.wxss**/
+scroll-view {
+  white-space: nowrap;
+  height: 82rpx;
+  border-bottom: 2rpx solid #b4b4b4;
+}
+.scroll-view-item {
+  display: inline-block;
+  padding: 0 20rpx;
+  line-height: 70rpx;
+  font-size: 30rpx;
+  color: #999;
+}
+.scroll-view-item.current {
+  border-bottom: 6rpx solid #177acb;
+}

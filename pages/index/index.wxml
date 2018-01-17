@@ -1,0 +1,3 @@
+<!--index.wxml-->
+ <import src="../../mods/wxml/template.wxml"/> 
+<template is="nav-scroll" data="{{toView: toView, nav: nav, currentIndex: currentIndex, changeNav: changeNav}}"></template>
