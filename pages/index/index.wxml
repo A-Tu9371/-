@@ -1,3 +1,8 @@
 <!--index.wxml-->
  <import src="../../mods/wxml/template.wxml"/> 
-<template is="nav-scroll" data="{{toView: toView, nav: nav, currentIndex: currentIndex, changeNav: changeNav}}"></template>
+<template is="nav-scroll" data="{{toView: toView, nav: nav, currentIndex: currentIndex, changeNav: changeNav}}" />
+<view class='content'>
+  <template is="search" />
+  <template is="swiper" data="{{imgUrls: imgUrls, indicatorDots:indicatorDots,autoplay:autoplay,interval:interval,duration:duration}}" />
+<template is="list" data="{{list: list}}" />
+</view>

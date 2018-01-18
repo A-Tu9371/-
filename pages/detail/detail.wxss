@@ -1,0 +1,36 @@
+/* pages/detail/detail.wxss */
+page {
+  padding: 20rpx 28rpx;
+  box-sizing: border-box;
+  color: #000;
+}
+.title {
+  height: 54rpx;
+  line-height: 54rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+}
+.info {
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  padding: 7rpx 0 15rpx;
+  border-bottom: 2rpx solid #ccc;
+}
+.avatar {
+  width: 45rpx;
+  height: 45rpx;
+  border-radius: 100%;
+  margin-right: 10rpx;
+}
+.author {
+  margin-right: 10rpx;
+}
+.pic {
+  width: 100%;
+  margin: 55rpx 0;
+}
+.desc {
+  font-size: 32rpx;
+  line-height: 1.375;
+}

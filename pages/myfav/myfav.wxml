@@ -1,0 +1,5 @@
+<!--pages/myfav/myfav.wxml-->
+<import src="../../mods/wxml/template.wxml"/> 
+<view class='content'>
+  <template is="list" data="{{list: list}}" />
+</view>

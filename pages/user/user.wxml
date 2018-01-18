@@ -1,2 +1,14 @@
 <!--pages/user/user.wxml-->
-<text>pages/user/user.wxml</text>
+<view class='cover'>
+  <image class='cover_bg' src="{{userInfo.avatarUrl}}"  mode="aspectFill"></image>
+  <view class='info'>
+    <image class='avatar' src="{{userInfo.avatarUrl}}" mode="aspectFill"></image>
+    <text class='nickname'>{{userInfo.nickName}}</text>
+  </view>
+</view>
+<view class='myList'>
+  <view class='item' bindtap='myFav'>
+    <text>我的收藏</text>
+    <image src='../../images/rightArrow.png'></image>
+  </view>
+</view>

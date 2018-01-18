@@ -1,7 +1,44 @@
+<!-- nav导航开始  -->
 <template name="nav-scroll">
   <scroll-view scroll-x scroll-into-view="{{toView}}" scroll-with-animation="{{true}}">
   <block wx:for="{{nav}}"  wx:for-index="navIndex" wx:key="{{navIndex}}">
-    <view id="item{{navIndex+1}}" class='scroll-view-item {{navIndex == currentIndex ? "current" : ""}}' data-toView="item{{navIndex+1}}" data-index="{{navIndex}}" bindtap='changeNav'>{{item.categoryName}}</view>
+    <view id="item{{navIndex}}" class='scroll-view-item {{item.isCurrent ? "current" : ""}}' data-index="{{navIndex}}" bindtap='changeNav'>{{item.categoryName}}</view>
   </block>
 </scroll-view>
 </template>
+<!-- nav导航结束  -->
+
+<!-- 搜索开始  -->
+<template name="search">
+  <input class='search' placeholder="新闻搜索" placeholder-class='s_grad' />
+</template>
+<!-- 搜索结束  -->
+
+<!-- 轮播开始  -->
+<template name="swiper">
+  <swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{true}}">
+    <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" width="100%" height="150"/>
+      </swiper-item>
+    </block>
+  </swiper>
+</template>
+<!-- 轮播结束  -->
+
+<!-- 列表开始  -->
+<template name="list">
+  <view class='list-container'>
+    <block wx:for="{{list}}" wx:key="{{index}}">
+      <view class='item' data-id='{{item.id}}' bindtap='showDetail'>
+        <view class='info'>
+          <view class='item-title'>{{item.title}}</view>
+          <view class='item-text'>{{item.isTop ? '专题置顶' : ''}} {{item.countView}}</view>
+        </view>
+        <image src="{{item.image}}" class='item-image' mode="aspectFill"></image>
+      </view>    
+    </block>    
+  </view>  
+</template>
+<!-- 列表结束  -->

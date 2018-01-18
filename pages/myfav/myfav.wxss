@@ -1,0 +1,6 @@
+/* pages/myfav/myfav.wxss */
+@import '../index/index.wxss';
+.content {
+  padding: 30rpx;
+  box-sizing: border-box;
+}

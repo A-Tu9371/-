@@ -1,0 +1,8 @@
+<view class="title">标题</view>
+<view class='info'>
+  <image class='avatar' src="http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg"></image>
+  <view class='author'>腾讯新闻</view>
+  <view class='time'>2018-1-6</view>
+</view>
+<image class='pic' src="http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg"></image>
+<view class='desc'>详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情</view>
