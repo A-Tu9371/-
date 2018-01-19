@@ -1,4 +1,7 @@
 //index.js
+var qcloud = require('../../vendor/wafer2-client-sdk/index')
+var config = require('../../config')
+var util = require('../../utils/util.js')
 //获取应用实例
 const app = getApp()
 const common = require('../../mods/js/common.js');
@@ -47,43 +50,25 @@ Page({
     autoplay: false,
     interval: 5000,
     duration: 1000,
-    list: [{
-      title: '新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题',
-      text: '内容内容内容内容',
-      isTop: true,
-      countView: 111,
-      image: "../../images/pic_1.png"
-    }, {
-      title: '新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题',
-      text: '内容内容内容内容',
-      isTop: true,
-      countView: 111,
-      image: "../../images/pic_1.png"
-    }, {
-      title: '新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题',
-      text: '内容内容内容内容',
-      isTop: true,
-      countView: 111,
-      image: "../../images/pic_1.png"
-    }, {
-      title: '新闻标题新闻标题新闻标题新闻标题新闻标题',
-      text: '内容内容内容内容',
-      isTop: true,
-      countView: 111,
-      image: "../../images/pic_1.png"
-    }, {
-      title: '新闻标题新闻标题新闻标题新闻标题新闻标题',
-      text: '内容内容内容内容',
-      isTop: true,
-      countView: 111,
-      image: "../../images/pic_1.png"
-    }, {
-      title: '新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题',
-      text: '内容内容内容内容',
-      isTop: true,
-      countView: 111,
-      image: "../../images/pic_1.png"
-    }]
+    list: []
+  },
+  onReady: function(){
+    util.showBusy('请求中...');
+    const that = this;
+    qcloud.request({
+      url: `${config.service.host}/weapp/demo`,
+      login: false,
+      success(result) {
+        util.showSuccess('请求成功完成')
+        that.setData({
+          list: result.data.data
+        })
+      },
+      fail(error) {
+        util.showModel('请求失败', error);
+        console.log('request fail', error);
+      }
+    })
   },
   onLoad: function () {
 
@@ -91,9 +76,6 @@ Page({
   changeNav: function (e) {
     const that = this;
     common.changeNav(e, that);
-  },
-  showDetail: function(e){
-    let id = e.currentTarget.dataset.id;
-    common.showDetail(id)
   }
+  
 })

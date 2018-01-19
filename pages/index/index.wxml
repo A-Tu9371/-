@@ -4,5 +4,5 @@
 <view class='content'>
   <template is="search" />
   <template is="swiper" data="{{imgUrls: imgUrls, indicatorDots:indicatorDots,autoplay:autoplay,interval:interval,duration:duration}}" />
-<template is="list" data="{{list: list}}" />
+<component-tag-list list="{{list}}"></component-tag-list>
 </view>

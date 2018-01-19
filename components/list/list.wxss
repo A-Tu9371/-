@@ -1,0 +1,36 @@
+/* components/list.wxss */
+/* 列表  */
+.list-container {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 20rpx;
+}
+.item {
+  width: 100%;
+  border: 1rpx solid #e9e9e9;
+  border-left: 0;
+  border-right: 0;
+  padding: 22rpx 0 20rpx;
+  display: flex;
+  box-sizing: border-box;
+  justify-content: space-between;
+  margin-top: 20rpx;
+}
+.info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.item-title {
+  font-size: 32rpx;
+  line-height: 1.25;
+}
+.item-text {
+  font-size: 28rpx;
+  line-height: 1;
+}
+.item-image {
+  width: 232rpx;
+  height: 156rpx;
+}

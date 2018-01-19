@@ -1,58 +1,38 @@
 // pages/myfav/myfav.js
-const common = require('../../mods/js/common.js');
+var qcloud = require('../../vendor/wafer2-client-sdk/index')
+var config = require('../../config')
+var util = require('../../utils/util.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    list: [{
-      title: '新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题',
-      text: '内容内容内容内容',
-      isTop: true,
-      countView: 111,
-      image: "../../images/pic_1.png"
-    }, {
-      title: '新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题',
-      text: '内容内容内容内容',
-      isTop: true,
-      countView: 111,
-      image: "../../images/pic_1.png"
-    }, {
-      title: '新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题',
-      text: '内容内容内容内容',
-      isTop: true,
-      countView: 111,
-      image: "../../images/pic_1.png"
-    }, {
-      title: '新闻标题新闻标题新闻标题新闻标题新闻标题',
-      text: '内容内容内容内容',
-      isTop: true,
-      countView: 111,
-      image: "../../images/pic_1.png"
-    }, {
-      title: '新闻标题新闻标题新闻标题新闻标题新闻标题',
-      text: '内容内容内容内容',
-      isTop: true,
-      countView: 111,
-      image: "../../images/pic_1.png"
-    }, {
-      title: '新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题',
-      text: '内容内容内容内容',
-      isTop: true,
-      countView: 111,
-      image: "../../images/pic_1.png"
-    }]
+    list: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
-  },
-  showDetail: function (e) {
-    let id = e.currentTarget.dataset.id;
-    common.showDetail(id)
+    util.showBusy('请求中...');
+    const that = this;
+    qcloud.request({
+      url: `${config.service.host}/weapp/demo`,
+      login: false,
+      data: {
+        name: 'bob'
+      },
+      success(result) {
+        util.showSuccess('请求成功完成')
+        that.setData({
+          list: result.data.data
+        })
+      },
+      fail(error) {
+        util.showModel('请求失败', error);
+        console.log('request fail', error);
+      }
+    })
   }
 })

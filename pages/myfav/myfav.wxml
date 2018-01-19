@@ -1,5 +1,5 @@
 <!--pages/myfav/myfav.wxml-->
 <import src="../../mods/wxml/template.wxml"/> 
 <view class='content'>
-  <template is="list" data="{{list: list}}" />
+  <component-tag-list list="{{list}}"></component-tag-list>
 </view>

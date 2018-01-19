@@ -5,8 +5,7 @@ page {
   color: #000;
 }
 .title {
-  height: 54rpx;
-  line-height: 54rpx;
+  line-height: 1.3;
   font-size: 32rpx;
   font-weight: 600;
 }
