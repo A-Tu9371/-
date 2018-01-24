@@ -3,6 +3,7 @@
   <image class='avatar' src="{{logged ? userInfo.avatarUrl : ''}}"></image>
   <view class='author'>{{logged ? userInfo.nickName : '腾讯新闻'}}</view>
   <view class='time'>{{detail.createtime}}</view>
+  <view class='time' bindtap='addFav' data-item="{{detail}}">添加收藏</view>
 </view>
 <image class='pic' src="{{detail.image}}"></image>
 <view class='desc'>{{detail.content}}</view>

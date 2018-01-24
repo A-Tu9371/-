@@ -18,16 +18,45 @@ Page({
     util.showBusy('请求中...');
     const that = this;
     qcloud.request({
-      url: `${config.service.host}/weapp/demo`,
+      url: `${config.service.host}/weapp/getMyFavList`,
+      method: 'POST',
       login: false,
-      data: {
-        name: 'bob'
-      },
       success(result) {
         util.showSuccess('请求成功完成')
-        that.setData({
-          list: result.data.data
-        })
+        if (result.data.data.length > 0) {
+          that.setData({
+            list: result.data.data
+          })
+        } else {
+          that.setData({
+            list: []
+          })
+        }
+      },
+      fail(error) {
+        util.showModel('请求失败', error);
+        console.log('request fail', error);
+      }
+    })
+  },
+  refresh: function(){
+    const that = this;
+    qcloud.request({
+      url: `${config.service.host}/weapp/getMyFavList`,
+      method: 'POST',
+      login: false,
+      success(result) {
+        util.showSuccess('请求成功完成')
+        if (result.data.data.length > 0){
+          that.setData({
+            list: result.data.data
+          })
+        }else {
+          that.setData({
+            list: []
+          })
+        }
+        
       },
       fail(error) {
         util.showModel('请求失败', error);

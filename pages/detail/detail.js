@@ -29,15 +29,37 @@ Page({
     var id = options.id;
     const that = this;
     qcloud.request({
-      url: `${config.service.host}/weapp/demo`,
+      url: `${config.service.host}/weapp/getNewsDetail`,
       login: false,
+      method: 'POST',
       data: {
         id: id
       },
       success(result) {
+        result.data.data.createtime = util.formatTime(new Date(result.data.data.createtime));
+        result.data.data.updatatime = util.formatTime(new Date(result.data.data.updatatime));
+
         that.setData({
           detail: result.data.data
         })
+      },
+      fail(error) {
+        console.log('request fail', error);
+      }
+    })
+  },
+  addFav: function(e){
+    let item = e.currentTarget.dataset.item;
+    item.id = null;
+    qcloud.request({
+      url: `${config.service.host}/weapp/addMyFav`,
+      login: false,
+      method: 'POST',
+      data: {
+        item: item
+      },
+      success(result) {
+        util.showSuccess('已收藏')
       },
       fail(error) {
         console.log('request fail', error);

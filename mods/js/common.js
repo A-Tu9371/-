@@ -1,5 +1,5 @@
 function changeNav(e,that) {
-  const item = 'item' + e.currentTarget.dataset.index;
+  const name = e.currentTarget.dataset.name;
   const index = e.currentTarget.dataset.index;
   let nav = that.data.nav;
   nav.map(function(navItem){
@@ -7,9 +7,11 @@ function changeNav(e,that) {
   });
   nav[index].isCurrent = true;
   that.setData({
-    toView: item,
-    nav: nav
+    toView: name,
+    nav: nav,
+    currentCategory: nav[index].id
   })
+  that.getNewsList();
 }
 
 function showDetail(id) {

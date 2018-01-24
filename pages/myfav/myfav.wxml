@@ -1,5 +1,5 @@
 <!--pages/myfav/myfav.wxml-->
 <import src="../../mods/wxml/template.wxml"/> 
 <view class='content'>
-  <component-tag-list list="{{list}}"></component-tag-list>
+  <component-tag-list list="{{list}}" is-fav="1"></component-tag-list>
 </view>
